@@ -1,5 +1,6 @@
 # Maximum-Solidity-Environment
 [![CircleCI](https://circleci.com/gh/Luiserebii/Maximum-Solidity-Environment/tree/master.svg?style=svg)](https://circleci.com/gh/Luiserebii/Maximum-Solidity-Environment/tree/master)
+
 The ultimate environment for Solidity development. The final choice. The end.
 
 ## Tools used:
@@ -302,6 +303,9 @@ workflows:
 
 #### Finishing touches
 
+* Add some badges:
+  * For CircleCI, this can be found under Settings -> Integrations -> Status Badges.
+  * Just add the Markdown text and paste into the README! 
 * Add a LICENSE (MIT recommended)
 * Add the following to a new file `.gitattributes`. This will allow GitHub to recognize your .sol files as Solidity
 ```

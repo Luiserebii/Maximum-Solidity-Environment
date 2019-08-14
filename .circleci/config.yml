@@ -71,9 +71,15 @@ jobs:
       - restore_cache:
           <<: *cache_key_node_modules
       - *npm_install_if_necessary
+      - run: 
+          name: Install Codecov
+          command: npm install -g codecov
       - run:
           name: Unit tests with coverage report
           command: npm run coverage
+      - run: 
+          name: Run Codecov
+          command: codecov
 
 workflows:
   version: 2
