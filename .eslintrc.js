@@ -17,6 +17,11 @@ module.exports = {
     'ecmaVersion': 2018
   },
   'rules': {
-    'max-len': ['error', 120, 2]
+    'max-len': ['error', 120, 2],
+    "no-unused-vars": "off",
+    "@typescript-eslint/no-unused-vars": ["error", { "vars": "all", "args": "after-used", "ignoreRestSiblings": false }]
   },
+  "plugins": [
+    "@typescript-eslint"
+  ]
 };

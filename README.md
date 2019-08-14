@@ -136,7 +136,7 @@ tsc --init
 * Next, comes TypeScript linting via ESLint:
   * Install via: `npm i --save-dev eslint`
   * We're using Google's style guide plugin, so: `npm i --save-dev eslint-config-google`
-  * We will also need the TypeScript ESLint plugin: `npm install @typescript-eslint/parser --save-dev`
+  * We will also need the TypeScript ESLint parser and plugin: `npm install @typescript-eslint/parser @typescript-eslint/eslint-plugin --save-dev`
   * Finally, setup `.eslintrc.js`. The following is a pretty good configuration that can be used:
 ```javascript
 module.exports = {
@@ -158,16 +158,23 @@ module.exports = {
     'ecmaVersion': 2018
   },
   'rules': {
-    'max-len': ['error', 120, 2]
+    'max-len': ['error', 120, 2],
+    "no-unused-vars": "off",
+    "@typescript-eslint/no-unused-vars": ["error", { "vars": "all", "args": "after-used", "ignoreRestSiblings": false }]
   },
+  "plugins": [
+    "@typescript-eslint"
+  ]
 };
+
 ```
 * Within package.json, edit the "lint" script and add the new lint scripts below:
 ```JSON
     "lint": "npm run lint:sol && npm run lint:js",
+    "lint:fix": "npm run lint:js:fix",
     "lint:sol": "solhint --max-warnings 0 \"contracts/**/*.sol\"",
     "lint:js": "eslint ./test/src/**/*.ts",
-    "lint:js:fix": "eslint --fix ./test/src"
+    "lint:js:fix": "eslint --fix ./test/src/**/*.ts"
 ```
 
 #### CI/CD Cloud Tools 
