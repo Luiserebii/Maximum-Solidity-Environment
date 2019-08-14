@@ -53,6 +53,17 @@ tsc --init
   * We can now modify .tsconfig according to our setup:
     * Modify target to `"ES2017"`
     * Uncomment outDir and set it to `"./bin"`
+    * And, add our types to the `"compilerOptions"`:
+```
+    "types": [
+      "@types/node",
+      "@types/mocha",
+      "@types/chai",
+      "@machinomy/types-truffle",
+      "@machinomy/types-truffle-contract",
+      "@machinomy/types-truffle-resolver"
+    ],   
+```
   * This should now look more or less like the following (many options commented out are shown in the generated file, but are excluded here for brevity):
 ```JSON
 {
@@ -61,6 +72,14 @@ tsc --init
     "module": "commonjs",                     /* Specify module code generation: 'none', 'commonjs', 'amd', 'system', 'umd', 'es2015', or 'ESNext'. */
     "outDir": "./bin",                        /* Redirect output structure to the directory. */
     "strict": true,                           /* Enable all strict type-checking options. */
+    "types": [
+      "@types/node",
+      "@types/mocha",
+      "@types/chai",
+      "@machinomy/types-truffle",
+      "@machinomy/types-truffle-contract",
+      "@machinomy/types-truffle-resolver"
+    ],   
     "esModuleInterop": true                   /* Enables emit interoperability between CommonJS and ES Modules via creation of namespace objects for all imports. Implies 'allowSyntheticDefaultImports'. */
   }
 }
