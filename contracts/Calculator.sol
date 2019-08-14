@@ -37,11 +37,27 @@ contract Calculator {
         emit Subtraction(a, b, c);
     }
 
+    /**
+     * @dev Simple multiplication function, returns the product of the numbers passed.
+     * 
+     * @param a uint256 Number to treat as a factor.
+     * @param b uint256 Number to treat as a factor.
+     * 
+     * @return uint256 The product of a and b.
+     */
     function mul(uint256 a, uint256 b) public returns (uint256){
         uint256 c = a * b;
         emit Multiplication(a, b, c);
     }
 
+    /**
+     * @dev Simple division function, returns the quotient of the numbers passed.
+     * 
+     * @param a uint256 Number to treat as the dividend.
+     * @param b uint256 Number to treat as the divisor.
+     * 
+     * @return uint256 The quotient of a ÷ b.
+     */
     function div(uint256 a, uint256 b) public returns (uint256){
         uint256 c = a / b;
         emit Division(a, b, c);
