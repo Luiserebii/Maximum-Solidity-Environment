@@ -1,6 +1,8 @@
 # Maximum-Solidity-Environment
 [![CircleCI](https://circleci.com/gh/Luiserebii/Maximum-Solidity-Environment/tree/master.svg?style=svg)](https://circleci.com/gh/Luiserebii/Maximum-Solidity-Environment/tree/master)
 [![codecov](https://codecov.io/gh/Luiserebii/Maximum-Solidity-Environment/branch/master/graph/badge.svg)](https://codecov.io/gh/Luiserebii/Maximum-Solidity-Environment)
+[![Language grade: JavaScript](https://img.shields.io/lgtm/grade/javascript/g/Luiserebii/Maximum-Solidity-Environment.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/Luiserebii/Maximum-Solidity-Environment/context:javascript)
+[![Total alerts](https://img.shields.io/lgtm/alerts/g/Luiserebii/Maximum-Solidity-Environment.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/Luiserebii/Maximum-Solidity-Environment/alerts/)
 
 The ultimate environment for Solidity development. The final choice. The end.
 
