@@ -6,6 +6,10 @@
 node_modules/
 build/
 bin/
+coverage/
+
+# Build files
+coverage.json
 
 # Ignore environment details
 .env

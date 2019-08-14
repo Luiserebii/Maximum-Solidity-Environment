@@ -38,7 +38,9 @@ The ultimate environment for Solidity development. The final choice. The end.
 ```
   * Runnable now via `npm run chain`
 
-#### Testing, Linting: 
+#### Testing, Linting, and Code Coverage: TypeScript, solhint, ESLint, solidity-coverage
+
+##### Testing
 * Mocha and Chai are included within Truffle, so technically, there should be no need to install them! This comes with a caveat, however...
   * TypeScript will yell at us about `error TS2304: Cannot find name 'assert'.`, so we will need to import chai into our tests and declare assert, and thus, install it.
   * `npm i --save-dev chai`
@@ -175,6 +177,21 @@ module.exports = {
     "lint:sol": "solhint --max-warnings 0 \"contracts/**/*.sol\"",
     "lint:js": "eslint ./test/src/**/*.ts",
     "lint:js:fix": "eslint --fix ./test/src/**/*.ts"
+```
+
+##### Code Coverage
+
+* Install `solidity-coverage`: 
+  * `npm i --save-dev solidity-coverage`
+* Add this script to package.json: 
+```
+    "coverage": "npx solidity-coverage",
+```
+* And, add a configuration file `.solcover.js`:
+```javascript
+module.exports = {
+    testCommand: 'npm t'
+};
 ```
 
 #### CI/CD Cloud Tools 
