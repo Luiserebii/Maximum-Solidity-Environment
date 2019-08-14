@@ -22,6 +22,7 @@ contract Calculator {
     function add(uint256 a, uint256 b) public returns (uint256) {
         uint256 c = a + b;
         emit Addition(a, b, c);
+        return c;
     }
 
     /**
@@ -35,6 +36,7 @@ contract Calculator {
     function sub(uint256 a, uint256 b) public returns (uint256){
         uint256 c = a - b;
         emit Subtraction(a, b, c);
+        return c;
     }
 
     /**
@@ -48,6 +50,7 @@ contract Calculator {
     function mul(uint256 a, uint256 b) public returns (uint256){
         uint256 c = a * b;
         emit Multiplication(a, b, c);
+        return c;
     }
 
     /**
@@ -61,6 +64,7 @@ contract Calculator {
     function div(uint256 a, uint256 b) public returns (uint256){
         uint256 c = a / b;
         emit Division(a, b, c);
+        return c;
     }
     
 

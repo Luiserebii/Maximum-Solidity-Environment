@@ -25,7 +25,12 @@ contract('Calculator', (accounts) => {
   })
 
   it('add', async () => {
+    const a: number = 10;
+    const b: number = 2;
 
+    const sum: BN = await instances.Calculator.add(a, b, { from: master});
+    console.log(sum.logs[0].args);
+    assert.equal(a + b, sum.toNumber());
   })
 
   it('sub', async () => {
