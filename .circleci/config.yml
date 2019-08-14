@@ -60,9 +60,10 @@ jobs:
       - run: 
           name: Run development blockchain
           command: npm run chain
+          background: true
       - run:
           name: Unit tests
-          command: sleep 5 && npm test
+          command: npm test
   coverage:
     <<: *defaults
     steps:
