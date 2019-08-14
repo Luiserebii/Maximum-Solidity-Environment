@@ -1,5 +1,5 @@
 module.exports = {
-    testCommand: 'npm t'
+    testCommand: 'npm t',
     skipFiles: [
         'Migrations.sol',
     ]
