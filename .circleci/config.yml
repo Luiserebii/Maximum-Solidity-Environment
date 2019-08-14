@@ -62,7 +62,7 @@ jobs:
           command: npm run chain &
       - run:
           name: Unit tests
-          command: npm test
+          command: sleep 5 & npm test
   coverage:
     <<: *defaults
     steps:
