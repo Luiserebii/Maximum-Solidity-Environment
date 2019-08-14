@@ -64,4 +64,23 @@ tsc --init
     "test": "tsc --project ./test/tsconfig.json && truffle test ./test/bin/*"
   }
 ```
+
+##### Linting
+
+* First, let's set up Solidity linting via `solhint`
+  * Install via: `npm i --save-dev solhint`
+  * Finally, add the following script:
+```JSON
+  "scripts": {
+    ...
+    "lint:sol": "solhint --max-warnings 0 \"contracts/**/*.sol\"",
+    ...
+  }
+```
+
+
 #### CI/CD Cloud Tools 
+
+#### Finishing touches
+
+* Add a LICENSE (MIT recommended)
