@@ -78,7 +78,7 @@ jobs:
 workflows:
   version: 2
   everything:
-    jobs:
+    jobs: # For reference, all jobs run in parallel
       - dependencies
       - lint:
           requires:

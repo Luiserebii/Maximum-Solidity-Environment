@@ -1,4 +1,5 @@
 # Maximum-Solidity-Environment
+[![CircleCI](https://circleci.com/gh/Luiserebii/Maximum-Solidity-Environment/tree/master.svg?style=svg)](https://circleci.com/gh/Luiserebii/Maximum-Solidity-Environment/tree/master)
 The ultimate environment for Solidity development. The final choice. The end.
 
 ## Tools used:
@@ -195,6 +196,109 @@ module.exports = {
 ```
 
 #### CI/CD Cloud Tools 
+
+##### CircleCI
+
+* CircleCI is pretty easy to set up. First, make an account on the CircleCI webpage.
+* Next, add a .circleci folder at the root of the directory
+  * `mkdir .circleci`
+* And, add the following YAML file as config.yml: 
+```yaml
+# Recommended documentation on CircleCI and node applications: https://circleci.com/docs/2.0/language-javascript/
+
+version: 2
+# 2.1 does not yet support local run
+# unless with workaround. For simplicity just use it.
+# https://github.com/CircleCI-Public/circleci-cli/issues/79
+
+aliases:
+  # Alias for any default options
+  - &defaults
+    docker:
+      - image: circleci/node:10.12 # Docker Node 10.12 image.
+ 
+  # Alias for installing npm, if necessary (hence the name)
+  - &npm_install_if_necessary
+    run:
+      name: Install npm dependencies
+      command: |
+        # If no node_modules directory
+        if [ ! -d node_modules ]; then 
+          # Perform a clean npm install
+          npm ci
+        fi
+  # Alias for caching - caches node dependencies with a cache key
+      # template for an environment variable,
+      # see circleci.com/docs/2.0/caching/
+  - &cache_key_node_modules
+    key: v1-node_modules-{{ checksum "package-lock.json" }}
+
+jobs:
+  dependencies:
+    <<: *defaults # << is used to inject an alias
+    steps:
+      - checkout
+      - restore_cache: # special step to restore the dependency cache
+          <<: *cache_key_node_modules
+      - *npm_install_if_necessary
+      - save_cache: # special step to save the dependency cache
+          paths:
+            - node_modules
+          <<: *cache_key_node_modules # Insert our alias to specify cache key to save to
+
+  lint:
+    <<: *defaults
+    steps:
+      - checkout
+      - restore_cache:
+          <<: *cache_key_node_modules
+      - *npm_install_if_necessary
+      - run:
+          name: Linter
+          command: npm run lint
+  test:
+    <<: *defaults
+    steps:
+      - checkout
+      - restore_cache:
+          <<: *cache_key_node_modules
+      - *npm_install_if_necessary
+      - run: 
+          name: Run development blockchain
+          command: npm run chain
+          background: true
+      - run:
+          name: Unit tests
+          command: npm test
+  coverage:
+    <<: *defaults
+    steps:
+      - checkout
+      - restore_cache:
+          <<: *cache_key_node_modules
+      - *npm_install_if_necessary
+      - run:
+          name: Unit tests with coverage report
+          command: npm run coverage
+
+workflows:
+  version: 2
+  everything:
+    jobs: # For reference, all jobs run in parallel
+      - dependencies
+      - lint:
+          requires:
+            - dependencies # Wait for dependencies jobs to finish before running
+      - test:
+          requires:
+            - dependencies
+      - coverage:
+          requires:
+            - dependencies
+```
+* Push this to your repo. For example, if using master, this would be:
+  * `git push origin master`
+* Finally, enable CircleCI on this repository within the online app, and everything should be up and running!
 
 #### Finishing touches
 
