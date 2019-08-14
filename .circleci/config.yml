@@ -59,7 +59,7 @@ jobs:
       - *npm_install_if_necessary
       - run: 
           name: Run development blockchain
-          command: npm run chain
+          command: npm run chain &
       - run:
           name: Unit tests
           command: npm test
