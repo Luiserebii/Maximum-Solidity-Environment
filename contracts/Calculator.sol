@@ -1,24 +1,48 @@
-pragma solidity ^0.4.25;
+pragma solidity ^0.5.0;
 
+/**
+ * @title Calculator
+ * @author Luiserebii <luis@serebii.io>
+ *
+ * @dev A simple calculator contract which performs basic arithmetic operations.
+ * Documented using the natural specifications detailed here:
+ * https://solidity.readthedocs.io/en/develop/natspec-format.html
+ */
 contract Calculator {
 
-    
-    function add(uint256 a, uint256 b) public {
+   
+    /**
+     * @dev Simple add function, returns the sum of the numbers passed.
+     * 
+     * @param a uint256 Number to add to.
+     * @param b uint256 Number to add.
+     * 
+     * @return uint256 The sum of a and b.
+     */
+    function add(uint256 a, uint256 b) public returns (uint256) {
         uint256 c = a + b;
         emit Addition(a, b, c);
     }
 
-    function sub(uint256 a, uint256 b) public {
+    /**
+     * @dev Simple subtraction function, returns the difference of the numbers passed.
+     * 
+     * @param a uint256 Number to subtract from.
+     * @param b uint256 Number to subtract.
+     * 
+     * @return uint256 The difference of a and b.
+     */
+    function sub(uint256 a, uint256 b) public returns (uint256){
         uint256 c = a - b;
         emit Subtraction(a, b, c);
     }
 
-    function mul(uint256 a, uint256 b) public {
+    function mul(uint256 a, uint256 b) public returns (uint256){
         uint256 c = a * b;
         emit Multiplication(a, b, c);
     }
 
-    function div(uint256 a, uint256 b) public {
+    function div(uint256 a, uint256 b) public returns (uint256){
         uint256 c = a / b;
         emit Division(a, b, c);
     }
