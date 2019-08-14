@@ -1,0 +1,87 @@
+version: 2
+# 2.1 does not yet support local run
+# unless with workaround. For simplicity just use it.
+# https://github.com/CircleCI-Public/circleci-cli/issues/79
+
+aliases:
+  # Alias for any default options
+  - &defaults
+    docker:
+      - image: circleci/node:10.12 # Docker Node 10.12 image.
+ 
+  # Alias for installing npm, if necessary (hence the name)
+  - &npm_install_if_necessary
+    run:
+      name: Install npm dependencies
+      command: |
+        # If no node_modules directory
+        if [ ! -d node_modules ]; then 
+          # Perform a clean npm install
+          npm ci
+        fi
+
+  - &cache_key_node_modules
+    key: v1-node_modules-{{ checksum "package-lock.json" }}
+
+jobs:
+  dependencies:
+    <<: *defaults # << is used to inject an alias
+    steps:
+      - checkout
+      - restore_cache:
+          <<: *cache_key_node_modules
+      - *npm_install_if_necessary
+      - save_cache:
+          paths:
+            - node_modules
+          <<: *cache_key_node_modules
+
+  lint:
+    <<: *defaults
+    steps:
+      - checkout
+      - restore_cache:
+          <<: *cache_key_node_modules
+      - *npm_install_if_necessary
+      - run:
+          name: Linter
+          command: npm run lint
+  test:
+    <<: *defaults
+    steps:
+      - checkout
+      - restore_cache:
+          <<: *cache_key_node_modules
+      - *npm_install_if_necessary
+      - run:
+          name: Unit tests
+          command: npm run test
+  coverage:
+    docker:
+      - image: circleci/node:8
+    steps:
+      - checkout
+      - restore_cache:
+          <<: *cache_key_node_modules
+      - *npm_install_if_necessary
+      - run:
+          name: Unit tests with coverage report
+          command: npm run coverage
+
+      # TODO(xinbenlv, #1839): run SOLC_NIGHTLY to be run but allow it to fail.
+
+workflows:
+  version: 2
+  everything:
+    jobs:
+      - dependencies
+      - lint:
+          requires:
+            - dependencies
+      - test:
+          requires:
+            - dependencies
+      - coverage:
+          requires:
+            - dependencies
+
