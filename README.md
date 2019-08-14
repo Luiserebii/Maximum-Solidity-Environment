@@ -336,7 +336,7 @@ workflows:
 
 * LGTM is even easier to setup; just head to [lgtm.com](https://lgtm.com/) and setup a new account
 * Add your project by copy-pasting the GitHub repository URL over
-* Wait for it to build and analyze; you should get a notification via email when it's finished!
+* Wait for it to build and analyze; this can take some time. You should get a notification via email when it's finished!
 
 #### Finishing touches
 
