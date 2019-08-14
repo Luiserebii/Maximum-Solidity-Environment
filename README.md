@@ -39,7 +39,11 @@ The ultimate environment for Solidity development. The final choice. The end.
     * Since `bin` will contain compiled files, let's add it to .gitignore as well
 * We will also need to install some dependencies so TypeScript can pick up some of the types we'll be using:
 ```
-npm i --save-dev @types/chai @types/mocha @types/node
+npm i --save-dev @types/chai @types/mocha @types/node @machinomy/types-truffle @machinomy/types-truffle-contract @machinomy/types-truffle-resolver
+```
+  * The truffle-specific types have dependencies themselves, so we will also need install them:
+```
+npm i --save-dev truffle-contract truffle-resolver
 ```
 * Now, we need to create a tsconfig.json file to pass to the Typescript compiler (`tsc`)
 ```

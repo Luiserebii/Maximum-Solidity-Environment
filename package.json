@@ -23,12 +23,17 @@
   },
   "homepage": "https://github.com/Luiserebii/Maximum-Solidity-Environment#readme",
   "devDependencies": {
+    "@machinomy/types-truffle": "^0.2.0",
+    "@machinomy/types-truffle-contract": "^0.2.0",
+    "@machinomy/types-truffle-resolver": "^0.2.0",
     "@types/chai": "^4.2.0",
     "@types/mocha": "^5.2.7",
     "@types/node": "^12.7.1",
     "ganache-cli": "^6.5.1",
     "solhint": "^2.2.0",
     "truffle": "^5.0.31",
+    "truffle-contract": "^4.0.28",
+    "truffle-resolver": "^5.0.15",
     "typescript": "^3.5.3"
   }
 }
