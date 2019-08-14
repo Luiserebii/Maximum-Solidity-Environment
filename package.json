@@ -10,7 +10,10 @@
     "test": "rm -rf ./test/bin/ && tsc --project ./test/tsconfig.json && truffle test ./test/bin/*",
     "compile": "npx truffle compile",
     "chain": "ganache-cli",
-    "lint:sol": "solhint --max-warnings 0 \"contracts/**/*.sol\""
+    "lint": "npm run lint:sol && npm run lint:js",
+    "lint:sol": "solhint --max-warnings 0 \"contracts/**/*.sol\"",
+    "lint:js": "eslint ./test/src/**/*.ts",
+    "lint:js:fix": "eslint --fix ./test/src"
   },
   "repository": {
     "type": "git",
@@ -29,7 +32,10 @@
     "@types/chai": "^4.2.0",
     "@types/mocha": "^5.2.7",
     "@types/node": "^12.7.1",
+    "@typescript-eslint/parser": "^2.0.0",
     "chai": "^4.2.0",
+    "eslint": "^6.1.0",
+    "eslint-config-google": "^0.13.0",
     "ganache-cli": "^6.5.1",
     "solhint": "^2.2.0",
     "truffle": "^5.0.31",
