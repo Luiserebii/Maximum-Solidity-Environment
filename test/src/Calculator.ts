@@ -28,20 +28,32 @@ contract('Calculator', (accounts) => {
     const a: number = 10;
     const b: number = 2;
 
-    const sum: BN = await instances.Calculator.add.call(a, b, { from: master});
-    //console.log(sum.logs[0]);
+    const sum: BN = await instances.Calculator.add.call(a, b, { from: master });
     assert.equal(a + b, sum.toNumber());
   })
 
   it('sub', async () => {
+    const a: number = 10;
+    const b: number = 2;
 
+    const diff: BN = await instances.Calculator.sub.call(a, b, { from: master });
+    assert.equal(a - b, diff.toNumber());
   })
   
   it('mul', async () => {
+    const a: number = 10;
+    const b: number = 2;
 
+    const prod: BN = await instances.Calculator.mul.call(a, b, { from: master });
+    assert.equal(a * b, prod.toNumber());
   })
 
   it('div', async () => {
 
+    const a: number = 10;
+    const b: number = 2;
+
+    const quot: BN = await instances.Calculator.div.call(a, b, { from: master });
+    assert.equal(a / b, quot.toNumber());
   })
 })
