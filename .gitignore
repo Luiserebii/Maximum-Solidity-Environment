@@ -5,6 +5,7 @@
 # Build and dependency folders
 node_modules/
 build/
+bin/
 
 # Ignore environment details
 .env

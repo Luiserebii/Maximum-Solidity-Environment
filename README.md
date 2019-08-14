@@ -37,7 +37,11 @@ The ultimate environment for Solidity development. The final choice. The end.
   * `src` will be where we will place our TypeScript test files
   * `bin` will be reserved for our built Javascript test files, which will be consumed by Mocha for testing
     * Since `bin` will contain compiled files, let's add it to .gitignore as well
-* Now, we need to create a .tsconfig file to pass to the Typescript compiler (`tsc`)
+* We will also need to install some dependencies so TypeScript can pick up some of the types we'll be using:
+```
+npm i --save-dev @types/chai @types/mocha @types/node
+```
+* Now, we need to create a tsconfig.json file to pass to the Typescript compiler (`tsc`)
 ```
 cd test
 tsc --init
@@ -45,7 +49,7 @@ tsc --init
   * We can now modify .tsconfig according to our setup:
     * Modify target to `"ES2017"`
     * Uncomment outDir and set it to `"./bin"`
-  * This should now look more or less like the following:
+  * This should now look more or less like the following (many options commented out are shown in the generated file, but are excluded here for brevity):
 ```JSON
 {
   "compilerOptions": {
@@ -64,6 +68,8 @@ tsc --init
     "test": "tsc --project ./test/tsconfig.json && truffle test ./test/bin/*"
   }
 ```
+
+
 
 ##### Linting
 

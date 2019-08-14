@@ -7,10 +7,10 @@
     "test": "test"
   },
   "scripts": {
+    "test": "tsc --project ./test/tsconfig.json && truffle test ./test/bin/*",
     "compile": "npx truffle compile",
     "chain": "ganache-cli",
-    "lint:sol": "solhint --max-warnings 0 \"contracts/**/*.sol\"",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "lint:sol": "solhint --max-warnings 0 \"contracts/**/*.sol\""
   },
   "repository": {
     "type": "git",
@@ -23,8 +23,12 @@
   },
   "homepage": "https://github.com/Luiserebii/Maximum-Solidity-Environment#readme",
   "devDependencies": {
+    "@types/chai": "^4.2.0",
+    "@types/mocha": "^5.2.7",
+    "@types/node": "^12.7.1",
     "ganache-cli": "^6.5.1",
     "solhint": "^2.2.0",
-    "truffle": "^5.0.31"
+    "truffle": "^5.0.31",
+    "typescript": "^3.5.3"
   }
 }
