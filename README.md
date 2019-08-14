@@ -38,7 +38,9 @@ The ultimate environment for Solidity development. The final choice. The end.
 ```
   * Runnable now via `npm run chain`
 
-#### Testing, Linting: 
+#### Testing, Linting: TypeScript, solhint, ESLint
+
+##### Testing
 * Mocha and Chai are included within Truffle, so technically, there should be no need to install them! This comes with a caveat, however...
   * TypeScript will yell at us about `error TS2304: Cannot find name 'assert'.`, so we will need to import chai into our tests and declare assert, and thus, install it.
   * `npm i --save-dev chai`
