@@ -7,7 +7,7 @@
     "test": "test"
   },
   "scripts": {
-    "test": "tsc --project ./test/tsconfig.json && truffle test ./test/bin/*",
+    "test": "rm -rf ./test/bin/ && tsc --project ./test/tsconfig.json && truffle test ./test/bin/*",
     "compile": "npx truffle compile",
     "chain": "ganache-cli",
     "lint:sol": "solhint --max-warnings 0 \"contracts/**/*.sol\""
