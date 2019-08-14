@@ -107,3 +107,7 @@ tsc --init
 #### Finishing touches
 
 * Add a LICENSE (MIT recommended)
+* Add the following to a new file `.gitattributes`. This will allow GitHub to recognize your .sol files as Solidity
+```
+*.sol linguist-language=Solidity
+```
