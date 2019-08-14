@@ -1,0 +1,10 @@
+# Ignore temporary files created by vim
+*.swo
+*.swp
+
+# Build and dependency folders
+node_modules/
+build/
+
+# Ignore environment details
+.env

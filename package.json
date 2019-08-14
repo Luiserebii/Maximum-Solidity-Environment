@@ -1,0 +1,22 @@
+{
+  "name": "maximum-solidiy-environment",
+  "version": "1.0.0",
+  "description": "The ultimate environment for Solidity development. The final choice. The end.",
+  "main": "truffle-config.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Luiserebii/Maximum-Solidity-Environment.git"
+  },
+  "author": "Luiserebii",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Luiserebii/Maximum-Solidity-Environment/issues"
+  },
+  "homepage": "https://github.com/Luiserebii/Maximum-Solidity-Environment#readme"
+}
