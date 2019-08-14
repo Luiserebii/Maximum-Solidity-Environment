@@ -57,6 +57,9 @@ jobs:
       - restore_cache:
           <<: *cache_key_node_modules
       - *npm_install_if_necessary
+      - run: 
+          name: Run development blockchain
+          command: npm run chain
       - run:
           name: Unit tests
           command: npm test
