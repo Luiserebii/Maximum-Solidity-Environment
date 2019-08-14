@@ -32,13 +32,13 @@ jobs:
     <<: *defaults # << is used to inject an alias
     steps:
       - checkout
-      - restore_cache:
+      - restore_cache: # special step to restore the dependency cache
           <<: *cache_key_node_modules
       - *npm_install_if_necessary
-      - save_cache:
+      - save_cache: # special step to save the dependency cache
           paths:
             - node_modules
-          <<: *cache_key_node_modules
+          <<: *cache_key_node_modules # Insert our alias to specify cache key to save to
 
   lint:
     <<: *defaults
@@ -59,10 +59,9 @@ jobs:
       - *npm_install_if_necessary
       - run:
           name: Unit tests
-          command: npm run test
+          command: npm test
   coverage:
-    docker:
-      - image: circleci/node:8
+    <<: *defaults
     steps:
       - checkout
       - restore_cache:
@@ -72,8 +71,6 @@ jobs:
           name: Unit tests with coverage report
           command: npm run coverage
 
-      # TODO(xinbenlv, #1839): run SOLC_NIGHTLY to be run but allow it to fail.
-
 workflows:
   version: 2
   everything:
@@ -81,7 +78,7 @@ workflows:
       - dependencies
       - lint:
           requires:
-            - dependencies
+            - dependencies # Wait for dependencies jobs to finish before running
       - test:
           requires:
             - dependencies
