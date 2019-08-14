@@ -9,6 +9,7 @@
   "scripts": {
     "compile": "npx truffle compile",
     "chain": "ganache-cli",
+    "lint:sol": "solhint --max-warnings 0 \"contracts/**/*.sol\"",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -23,6 +24,7 @@
   "homepage": "https://github.com/Luiserebii/Maximum-Solidity-Environment#readme",
   "devDependencies": {
     "ganache-cli": "^6.5.1",
+    "solhint": "^2.2.0",
     "truffle": "^5.0.31"
   }
 }

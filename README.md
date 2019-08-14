@@ -69,6 +69,23 @@ tsc --init
 
 * First, let's set up Solidity linting via `solhint`
   * Install via: `npm i --save-dev solhint`
+  * Next, setup `.solhint.json`. This is a pretty good configuration that can bd used:
+```
+{
+  "extends": "solhint:recommended",
+  "rules": {
+    "indent": ["error", 4],
+    "func-order": "off",
+    "bracket-align": "off",
+    "compiler-fixed": "off",
+    "no-simple-event-func-name": "off",
+    "separate-by-one-line-in-contract": "off",
+    "two-lines-top-level-separator": "off",
+    "mark-callable-contracts": "off",
+    "compiler-version": ["error", "^0.5.0"]
+  }
+}
+```
   * Finally, add the following script:
 ```JSON
   "scripts": {
