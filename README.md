@@ -270,14 +270,16 @@ module.exports = {
 };
 ```
 
-#### CI/CD Cloud Tools: CircleCI, Codecov, LGTM 
+### CI/CD Cloud Tools: CircleCI, Codecov, LGTM 
 
-##### CircleCI
+#### CircleCI
 
-* CircleCI is pretty easy to set up. First, make an account on the CircleCI webpage.
-* Next, add a .circleci folder at the root of the directory
+* CircleCI is pretty easy to set up. First, make an account on the CircleCI webpage. [https://circleci.com/signup/](https://circleci.com/signup/)
+* Next, add a `.circleci` folder at the root of the directory:
   * `mkdir .circleci`
-* And, add the following YAML file as config.yml: 
+* Move to this new directory and add the following YAML file as `config.yml` to it:
+
+**config.yml**
 ```yaml
 # Recommended documentation on CircleCI and node applications: https://circleci.com/docs/2.0/language-javascript/
 
@@ -371,11 +373,11 @@ workflows:
           requires:
             - dependencies
 ```
-* Push this to your repo. For example, if using master, this would be:
+* Push this to your repo. For example, if using `master` as your default branch, this would be:
   * `git push origin master`
 * Finally, enable CircleCI on this repository within the online app, and everything should be up and running!
 
-##### Codecov
+#### Codecov
 
 * Codecov is also fairly easy to set up!
 * Head to [codecov.io](https://codecov.io) and setup a new account
