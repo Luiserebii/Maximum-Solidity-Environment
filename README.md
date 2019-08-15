@@ -45,6 +45,12 @@ Table of Contents
   * **Codecov** - Codecov provides highly integrated tools to group, merge, archive, and compare coverage reports. [https://codecov.io/](https://codecov.io/)
   * **LGTM** - A code analysis platform for finding zero-days and preventing critical vulnerabilities. [https://lgtm.com/](https://lgtm.com/)
 
+## Overview:
+
+To set this up in your own repo without going through the step-by-step process below, this section is for you!
+
+
+
 ## Step-by-step:
 
 ### Core: Truffle, Ganache, and npm
@@ -63,8 +69,6 @@ Table of Contents
   * ```npm i --save-dev truffle```
 * Generate truffle files: 
   * ```truffle init```
-* Generate package.json:
-  * ```npm init```
 * Create `.gitignore`, and ignore:
   * Any temporary files created by text editor/IDE (e.g. `.swo` and `.swp` by vim)
   * `node_modules/` (dependency installations)
@@ -227,7 +231,6 @@ tsc --init
 module.exports = {
   'env': {
     'es6': true,
-    'node': true,
     "node": true,
     "mocha": true,
   },
