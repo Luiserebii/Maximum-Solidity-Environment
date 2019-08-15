@@ -101,11 +101,14 @@ npm i --save-dev truffle-contract truffle-resolver
 cd test
 tsc --init
 ```
-  * We can now modify `.tsconfig` according to our setup:
+  * We can now modify `tsconfig.json` according to our setup:
     * Modify target to `"ES2017"`
     * Uncomment `"outDir"` and set it to `"./bin"`
     * And, add our typing packages to the `"compilerOptions"`:
-```JSON
+
+**tsconfig.json**
+```javascript
+    // ...
     "types": [
       "@types/node",
       "@types/mocha",
@@ -114,8 +117,11 @@ tsc --init
       "@machinomy/types-truffle-contract",
       "@machinomy/types-truffle-resolver"
     ],   
+    // ...
 ```
   * This should now look more or less like the following (many options commented out are shown in the generated file, but are excluded here for brevity):
+
+**tsconfig.json**
 ```javascript
 {
   "compilerOptions": {
@@ -136,6 +142,8 @@ tsc --init
 }
 ```
 * Finally, we can add our testing script:
+
+**package.json**
 ```javascript
   "scripts": {
     "test": "rm -rf ./test/bin && tsc --project ./test/tsconfig.json && truffle test ./test/bin/*"
@@ -147,9 +155,12 @@ tsc --init
 
 #### Linting
 
-* First, let's set up Solidity linting via `solhint`
-  * Install via: `npm i --save-dev solhint`
-  * Next, setup `.solhint.json`. This is a pretty good configuration that can be used:
+##### solhint
+* First, let's set up Solidity linting via `solhint`. Install via:
+  * `npm i --save-dev solhint`
+* Next, create and setup `.solhint.json`. This is a pretty good configuration that can be used:
+
+**.solhint.json**
 ```JSON
 {
   "extends": "solhint:recommended",
@@ -166,19 +177,27 @@ tsc --init
   }
 }
 ```
-  * Finally, add the following script:
-```JSON
+  * Finally, add the following script, `lint:sol`:
+
+**package.json**
+```javascript
   "scripts": {
-    ...
+    // ...
     "lint:sol": "solhint --max-warnings 0 \"contracts/**/*.sol\"",
-    ...
+    // ...
   }
 ```
-* Next, comes TypeScript linting via ESLint:
-  * Install via: `npm i --save-dev eslint`
-  * We're using Google's style guide plugin, so: `npm i --save-dev eslint-config-google`
-  * We will also need the TypeScript ESLint parser and plugin: `npm install @typescript-eslint/parser @typescript-eslint/eslint-plugin --save-dev`
-  * Finally, setup `.eslintrc.js`. The following is a pretty good configuration that can be used:
+
+##### ESLint
+* Next, comes TypeScript linting via ESLint. Install via: 
+  * `npm i --save-dev eslint`
+* We'll be using Google's style guide plugin: 
+  * `npm i --save-dev eslint-config-google`
+* We will also need the TypeScript ESLint parser and plugin: 
+  * `npm install @typescript-eslint/parser @typescript-eslint/eslint-plugin --save-dev`
+* Finally, setup `.eslintrc.js`. The following is a pretty good configuration that can be used:
+
+**.eslintrc.js**
 ```javascript
 module.exports = {
   'env': {
@@ -209,24 +228,39 @@ module.exports = {
 };
 
 ```
-* Within package.json, edit the "lint" script and add the new lint scripts below:
-```JSON
+* Within package.json, edit the "lint" script and add the new linting scripts below. `lint` will handle both the solhint and ESLint linting. Since no option for fixing linting errors found by solhint exists, `lint:fix` will just reference `lint:js:fix` for the time being:
+
+**package.json**
+```javascript
+  "scripts": {
+    // ...
     "lint": "npm run lint:sol && npm run lint:js",
     "lint:fix": "npm run lint:js:fix",
     "lint:sol": "solhint --max-warnings 0 \"contracts/**/*.sol\"",
     "lint:js": "eslint ./test/src/**/*.ts",
     "lint:js:fix": "eslint --fix ./test/src/**/*.ts"
+  }
 ```
 
-##### Code Coverage
+#### Code Coverage
+
+##### solidity-coverage
 
 * Install `solidity-coverage`: 
   * `npm i --save-dev solidity-coverage`
 * Add this script to package.json: 
-```
+
+**package.json**
+```javascript
+  "scripts": {
+    // ...
     "coverage": "npx solidity-coverage",
+    // ...
+  }
 ```
-* And, add a configuration file `.solcover.js`:
+* And, add a configuration file `.solcover.js`. We'll be asking it to use `npm t` for the testing command (shorthand for `npm test`), and to skip `Migrations.sol`:
+
+**.solcover.js**
 ```javascript
 module.exports = {
     testCommand: 'npm t',
