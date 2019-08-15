@@ -13,12 +13,12 @@ The ultimate environment for Solidity development. The final choice. The end.
   * **npm** - npm is the package manager for the Node JavaScript platform. It puts modules in place so that node can find them, and manages dependency conflicts intelligently. [https://docs.npmjs.com/](https://docs.npmjs.com/)
   * **Ganache** - Quickly fire up a personal Ethereum blockchain which you can use to run tests, execute commands, and inspect state while controlling how the chain operates. **NOTE:** This environment uses `ganache-cli`. [https://github.com/trufflesuite/ganache-cli](https://github.com/trufflesuite/ganache-cli)
   * **TypeScript** - TypeScript is a typed superset of JavaScript that compiles to plain JavaScript. [https://www.typescriptlang.org/](https://www.typescriptlang.org/)
-  * **solhint**
-  * **ESLint**
-  * **solidity-coverage**
-  * **CircleCI**
-  * **Codecov**
-  * **LGTM**
+  * **solhint** - This is an open source project for linting Solidity code. [https://github.com/protofire/solhint](https://github.com/protofire/solhint)
+  * **ESLint** - ESLint is a tool for identifying and reporting on patterns found in ECMAScript/JavaScript code. [https://github.com/eslint/eslint](https://github.com/eslint/eslint)
+  * **solidity-coverage** - A code coverage tool for Solidity. [https://github.com/sc-forks/solidity-coverage](https://github.com/sc-forks/solidity-coverage)
+  * **CircleCI** - CircleCI runs nearly one million jobs per day in support of 30,000 organizations. Organizations choose CircleCI because jobs run fast and builds can be optimized for speed. CircleCI can be configured to run very complex pipelines efficiently with sophisticated caching, docker layer caching, resource classes for running on faster machines, and performance pricing. [https://circleci.com/](https://circleci.com/)
+  * **Codecov** - Codecov provides highly integrated tools to group, merge, archive, and compare coverage reports. [https://codecov.io/](https://codecov.io/)
+  * **LGTM** - A code analysis platform for finding zero-days and preventing critical vulnerabilities. [https://lgtm.com/](https://lgtm.com/)
 
 ## Reproduce:
 
