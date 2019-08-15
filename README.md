@@ -1,6 +1,6 @@
 # 🐲 Maximum Solidity Environment 🐲
 ![GitHub package.json version](https://img.shields.io/github/package-json/v/Luiserebii/Maximum-Solidity-Environment?color=g)
-![GitHub](https://img.shields.io/github/license/luiserebii/Maximum-Solidity-Environment)
+![GitHub](https://img.shields.io/github/license/Luiserebii/Maximum-Solidity-Environment?color=g)
 [![CircleCI](https://circleci.com/gh/Luiserebii/Maximum-Solidity-Environment/tree/master.svg?style=svg)](https://circleci.com/gh/Luiserebii/Maximum-Solidity-Environment/tree/master)
 [![codecov](https://codecov.io/gh/Luiserebii/Maximum-Solidity-Environment/branch/master/graph/badge.svg)](https://codecov.io/gh/Luiserebii/Maximum-Solidity-Environment)
 [![Language grade: JavaScript](https://img.shields.io/lgtm/grade/javascript/g/Luiserebii/Maximum-Solidity-Environment.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/Luiserebii/Maximum-Solidity-Environment/context:javascript)
@@ -9,8 +9,16 @@
 The ultimate environment for Solidity development. The final choice. The end.
 
 ## Tools used:
-  * Truffle
-  * npm
+  * **Truffle** - Truffle is a development environment, testing framework and asset pipeline for Ethereum, aiming to make life as an Ethereum developer easier. [https://www.trufflesuite.com/truffle](https://www.trufflesuite.com/truffle)
+  * **npm** - npm is the package manager for the Node JavaScript platform. It puts modules in place so that node can find them, and manages dependency conflicts intelligently. [https://docs.npmjs.com/](https://docs.npmjs.com/)
+  * **Ganache** - Quickly fire up a personal Ethereum blockchain which you can use to run tests, execute commands, and inspect state while controlling how the chain operates. **NOTE:** This environment uses `ganache-cli`. [https://github.com/trufflesuite/ganache-cli](https://github.com/trufflesuite/ganache-cli)
+  * **TypeScript** - TypeScript is a typed superset of JavaScript that compiles to plain JavaScript. [https://www.typescriptlang.org/](https://www.typescriptlang.org/)
+  * **solhint**
+  * **ESLint**
+  * **solidity-coverage**
+  * **CircleCI**
+  * **Codecov**
+  * **LGTM**
 
 ## Reproduce:
 
