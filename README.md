@@ -8,6 +8,31 @@
 
 The ultimate environment for Solidity development. The final choice. The end.
 
+Table of Contents
+=================
+
+   * [<g-emoji class="g-emoji" alias="dragon_face" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f432.png">🐲</g-emoji> Maximum Solidity Environment <g-emoji class="g-emoji" alias="dragon_face" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f432.png">🐲</g-emoji>](#-maximum-solidity-environment-)
+      * [Tools used:](#tools-used)
+      * [Step-by-step:](#step-by-step)
+         * [Core: Truffle, Ganache, and npm](#core-truffle-ganache-and-npm)
+            * [Initial Setup](#initial-setup)
+            * [Truffle, npm, and Git](#truffle-npm-and-git)
+         * [Testing, Linting, and Code Coverage: TypeScript, solhint, ESLint, solidity-coverage](#testing-linting-and-code-coverage-typescript-solhint-eslint-solidity-coverage)
+            * [Testing: TypeScript, Dependencies, and Compiler Setup for Truffle](#testing-typescript-dependencies-and-compiler-setup-for-truffle)
+               * [TypeScript Setup](#typescript-setup)
+               * [Dependencies](#dependencies)
+            * [Linting](#linting)
+               * [solhint](#solhint)
+               * [ESLint](#eslint)
+            * [Code Coverage](#code-coverage)
+               * [solidity-coverage](#solidity-coverage)
+         * [CI/CD Cloud Tools: CircleCI, Codecov, LGTM](#cicd-cloud-tools-circleci-codecov-lgtm)
+            * [CircleCI](#circleci)
+            * [Codecov](#codecov)
+               * [LGTM](#lgtm)
+            * [Finishing touches](#finishing-touches)
+      * [Versioning](#versioning)
+
 ## Tools used:
   * **Truffle** - Truffle is a development environment, testing framework and asset pipeline for Ethereum, aiming to make life as an Ethereum developer easier. [https://www.trufflesuite.com/truffle](https://www.trufflesuite.com/truffle)
   * **npm** - npm is the package manager for the Node JavaScript platform. It puts modules in place so that node can find them, and manages dependency conflicts intelligently. [https://docs.npmjs.com/](https://docs.npmjs.com/)
@@ -380,9 +405,11 @@ workflows:
 #### Codecov
 
 * Codecov is also fairly easy to set up!
-* Head to [codecov.io](https://codecov.io) and setup a new account
-* Activate Codecov for your repository
+* Head to [https://codecov.io](https://codecov.io) and setup a new account.
+* Activate Codecov for your repository within the online app.
 * Finally, head to your `.circleci/config.yml` file, and edit it as so:
+
+**config.yml**
 ```yaml
   coverage:
     <<: *defaults
@@ -406,7 +433,7 @@ workflows:
 
 ##### LGTM
 
-* LGTM is even easier to setup; just head to [lgtm.com](https://lgtm.com/) and setup a new account
+* LGTM is even easier to setup; just head to [https://lgtm.com](https://lgtm.com/) and setup a new account
 * Add your project by copy-pasting the GitHub repository URL over
 * Wait for it to build and analyze; this can take some time. You should get a notification via email when it's finished!
 
