@@ -1,6 +1,6 @@
 {
   "name": "maximum-solidiy-environment",
-  "version": "1.0.0",
+  "version": "1.0.0-beta",
   "description": "The ultimate environment for Solidity development. The final choice. The end.",
   "main": "truffle-config.js",
   "directories": {
