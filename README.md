@@ -106,25 +106,25 @@ Finally, add the following to your files:
 ```
 
 **.circleci/config.yml**  
-Copy: (https://github.com/Luiserebii/Maximum-Solidity-Environment/blob/master/.circleci/config.yml)[https://github.com/Luiserebii/Maximum-Solidity-Environment/blob/master/.circleci/config.yml]
+Copy: [https://github.com/Luiserebii/Maximum-Solidity-Environment/blob/master/.circleci/config.yml](https://github.com/Luiserebii/Maximum-Solidity-Environment/blob/master/.circleci/config.yml)
   
 **.eslintrc.js**  
-Copy: (https://github.com/Luiserebii/Maximum-Solidity-Environment/blob/master/.eslintrc.js)[https://github.com/Luiserebii/Maximum-Solidity-Environment/blob/master/.eslintrc.js]
+Copy: [https://github.com/Luiserebii/Maximum-Solidity-Environment/blob/master/.eslintrc.js](https://github.com/Luiserebii/Maximum-Solidity-Environment/blob/master/.eslintrc.js)
   
 **.gitattributes**  
-Copy: (https://github.com/Luiserebii/Maximum-Solidity-Environment/blob/master/.gitattributes)[https://github.com/Luiserebii/Maximum-Solidity-Environment/blob/master/.gitattributes]
+Copy: [https://github.com/Luiserebii/Maximum-Solidity-Environment/blob/master/.gitattributes](https://github.com/Luiserebii/Maximum-Solidity-Environment/blob/master/.gitattributes)
   
 **.gitignore**  
-Copy: (https://github.com/Luiserebii/Maximum-Solidity-Environment/blob/master/.gitignore)[https://github.com/Luiserebii/Maximum-Solidity-Environment/blob/master/.gitignore]
+Copy: [https://github.com/Luiserebii/Maximum-Solidity-Environment/blob/master/.gitignore](https://github.com/Luiserebii/Maximum-Solidity-Environment/blob/master/.gitignore)
   
 **.solcover.js**  
-Copy: (https://github.com/Luiserebii/Maximum-Solidity-Environment/blob/master/.solcover.js)[https://github.com/Luiserebii/Maximum-Solidity-Environment/blob/master/.solcover.js]
+Copy: [https://github.com/Luiserebii/Maximum-Solidity-Environment/blob/master/.solcover.js](https://github.com/Luiserebii/Maximum-Solidity-Environment/blob/master/.solcover.js)
   
 **.solhint.json**  
-Copy: (https://github.com/Luiserebii/Maximum-Solidity-Environment/blob/master/.solhint.json)[https://github.com/Luiserebii/Maximum-Solidity-Environment/blob/master/.solhint.json]
+Copy: [https://github.com/Luiserebii/Maximum-Solidity-Environment/blob/master/.solhint.json](https://github.com/Luiserebii/Maximum-Solidity-Environment/blob/master/.solhint.json)
   
 **truffle-config.js**  
-Copy: (https://github.com/Luiserebii/Maximum-Solidity-Environment/blob/master/truffle-config.js)[https://github.com/Luiserebii/Maximum-Solidity-Environment/blob/master/truffle-config.js]
+Copy: [https://github.com/Luiserebii/Maximum-Solidity-Environment/blob/master/truffle-config.js](https://github.com/Luiserebii/Maximum-Solidity-Environment/blob/master/truffle-config.js)
   
 At this point, all that is necessary is to signup on CircleCI, Codecov, and LGTM, and set them up with the repo.
 
