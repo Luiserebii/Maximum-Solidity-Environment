@@ -8,11 +8,15 @@
 
 The ultimate environment for Solidity development. The final choice. The end.
 
+
+
 Table of Contents
 =================
 
    * [<g-emoji class="g-emoji" alias="dragon_face" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f432.png">🐲</g-emoji> Maximum Solidity Environment <g-emoji class="g-emoji" alias="dragon_face" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f432.png">🐲</g-emoji>](#-maximum-solidity-environment-)
       * [Tools used:](#tools-used)
+      * [Overview - Quick Setup:](#overview---quick-setup)
+      * [From clone:](#from-clone)
       * [Step-by-step:](#step-by-step)
          * [Core: Truffle, Ganache, and npm](#core-truffle-ganache-and-npm)
             * [Initial Setup](#initial-setup)
@@ -29,9 +33,14 @@ Table of Contents
          * [CI/CD Cloud Tools: CircleCI, Codecov, LGTM](#cicd-cloud-tools-circleci-codecov-lgtm)
             * [CircleCI](#circleci)
             * [Codecov](#codecov)
-               * [LGTM](#lgtm)
-            * [Finishing touches](#finishing-touches)
+            * [LGTM](#lgtm)
+         * [Finishing touches](#finishing-touches)
       * [Versioning](#versioning)
+
+
+
+
+
 
 ## Tools used:
   * **Truffle** - Truffle is a development environment, testing framework and asset pipeline for Ethereum, aiming to make life as an Ethereum developer easier. [https://www.trufflesuite.com/truffle](https://www.trufflesuite.com/truffle)
@@ -111,7 +120,7 @@ At this point, all that is necessary is to signup on CircleCI, Codecov, and LGTM
 
 ## From clone:
 
-Another option for using this is cloning the repo and replacing the repo-specific values with your own. 
+Another option for using this is cloning the repo and replacing the repo-specific values with your own. One motivation might be, if you're having trouble setting up the repo in any of the other ways for any reason, this repo should be guaranteed to have running tests and compiling contracts, so you can work by modifying a successful setup.
 
 To accomplish this, clone the repo:
 ```
