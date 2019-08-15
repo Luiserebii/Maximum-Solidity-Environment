@@ -6,7 +6,16 @@
 [![Language grade: JavaScript](https://img.shields.io/lgtm/grade/javascript/g/Luiserebii/Maximum-Solidity-Environment.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/Luiserebii/Maximum-Solidity-Environment/context:javascript)
 [![Total alerts](https://img.shields.io/lgtm/alerts/g/Luiserebii/Maximum-Solidity-Environment.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/Luiserebii/Maximum-Solidity-Environment/alerts/)
 
-The ultimate environment for Solidity development. The final choice. The end.
+The ultimate environment for Solidity development. TypeScript smart contract testing, code coverage tools, linting, and more included! Simply setup, and get to writing code quickly, with all the tools you need for a fully integrated project at your disposal.
+
+Why does this exist? After setting up a few different repositories with similar configurations, I realized how much effort I'd be spending setting up all of these tools over again. Initially, the barrier was creating a set up where TypeScript could be used to test contracts. 
+Eventually, as I started piling up tools for code coverage, linting, and all of the configuration files needed, from TypeScript's compiler to both ESLint and solhint, it became clear that getting this all in a consistent setup which can be easily replicated would be the best course of action to save time in future setups. 
+
+This is supposed to ease the following integration barriers:
+  * TypeScript for Solidity smart contract testing
+  * Linting of contracts and TypeScript test files
+  * Smooth testing which compiles test files and uses the compiled JavaScript to run in one command
+  * CI/CD cloud tools for further strengthening the development lifecycle
 
 
 
