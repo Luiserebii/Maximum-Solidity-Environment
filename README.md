@@ -152,6 +152,7 @@ And finally, within package.json, replace the following values with your own:
   },
   "homepage": "https://github.com/Luiserebii/Maximum-Solidity-Environment#readme",
   // ...   
+}
 ```
 
 Like in the Quick Setup, at this point, all that is necessary is to signup on CircleCI, Codecov, and LGTM, and set them up with the repo.
@@ -561,6 +562,25 @@ workflows:
 *.sol linguist-language=Solidity
 ```
 
+## Usage
+
+This section will focus on using the setup of the environment. Ideally, you should get a solid grasp on how to work from here onwards.
+
+Solidity smart contracts (appended with `.sol`) should be written within the `contracts/` directory. Contract tests, written in TypeScript (appended with `.ts`) should be kept within the `test/src/` directory.
+
+Compiling contracts is simple, just run `npm run compile`.
+
+To test your contracts, you will need to open a test chain in a different terminal. Run `npm run chain` in one, and `npm t` in the other. The test script connects to the locally running instance of Ganache, which is why this is necessary.
+
+In order to make sure your code is linted, all you have to do is run `npm run lint`. If you need to be more specific:
+  * Solidity: `npm run lint:sol`
+  * TypeScript: `npm run lint:js`
+  
+Sometimes, errors/warnings from ESLint can be fixed automatically by the tool. To do so, run `npm run lint:fix`, or `npm run lint:js:fix` if you want to be specific. Both will do the same, as there is no `solhint --fix` at the moment.
+
+To check for code coverage, simply run `npm run coverage`.
+
+This should be more or less evident by `package.json`, but a brief overview might help clarify things. With an understanding of the development flow with this environment, using this should be simple.
 
 ## Versioning
 
