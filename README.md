@@ -45,10 +45,67 @@ Table of Contents
   * **Codecov** - Codecov provides highly integrated tools to group, merge, archive, and compare coverage reports. [https://codecov.io/](https://codecov.io/)
   * **LGTM** - A code analysis platform for finding zero-days and preventing critical vulnerabilities. [https://lgtm.com/](https://lgtm.com/)
 
-## Overview:
+## Overview - Quick Setup:
 
 To set this up in your own repo without going through the step-by-step process below, this section is for you!
+  
+To start, if you haven't already, setup your project as a git repository and an npm package:
+  
+```
+git init
+npm init
+```
 
+After running through the prompts, install all of the following packages:
+
+```
+npm i --savedev truffle ganache-cli typescript chai @types/chai @types/mocha @types/node @machinomy/types-truffle @machinomy/types-truffle-contract @machinomy/types-truffle-resolver truffle-contract truffle-resolver solhint eslint eslint-config-google @typescript-eslint/parser @typescript-eslint/eslint-plugin solidity-coverage 
+```
+
+Initialize Truffle:
+
+```
+truffle init
+```
+
+Finally, add the following to your files:
+
+**package.json**
+```javascript
+  // ...
+  "scripts": {
+    "test": "rm -rf ./test/bin/ && tsc --project ./test/tsconfig.json && truffle test ./test/bin/*",
+    "compile": "npx truffle compile",
+    "chain": "ganache-cli",
+    "coverage": "npx solidity-coverage",
+    "lint": "npm run lint:sol && npm run lint:js",
+    "lint:fix": "npm run lint:js:fix",
+    "lint:sol": "solhint --max-warnings 0 \"contracts/**/*.sol\"",
+    "lint:js": "eslint ./test/src/**/*.ts",
+    "lint:js:fix": "eslint --fix ./test/src/**/*.ts"
+  // ..
+```
+
+**.circleci/config.yml**
+Copy: (https://github.com/Luiserebii/Maximum-Solidity-Environment/blob/master/.circleci/config.yml)[https://github.com/Luiserebii/Maximum-Solidity-Environment/blob/master/.circleci/config.yml]
+  
+**.eslintrc.js**
+Copy: (https://github.com/Luiserebii/Maximum-Solidity-Environment/blob/master/.eslintrc.js)[https://github.com/Luiserebii/Maximum-Solidity-Environment/blob/master/.eslintrc.js]
+  
+**.gitattributes**
+Copy: (https://github.com/Luiserebii/Maximum-Solidity-Environment/blob/master/.gitattributes)[https://github.com/Luiserebii/Maximum-Solidity-Environment/blob/master/.gitattributes]
+  
+**.gitignore**
+Copy: (https://github.com/Luiserebii/Maximum-Solidity-Environment/blob/master/.gitignore)[https://github.com/Luiserebii/Maximum-Solidity-Environment/blob/master/.gitignore]
+  
+**.solcover.js**
+Copy: (https://github.com/Luiserebii/Maximum-Solidity-Environment/blob/master/.solcover.js)[https://github.com/Luiserebii/Maximum-Solidity-Environment/blob/master/.solcover.js]
+  
+**.solhint.json**
+Copy: (https://github.com/Luiserebii/Maximum-Solidity-Environment/blob/master/.solhint.json)[https://github.com/Luiserebii/Maximum-Solidity-Environment/blob/master/.solhint.json]
+  
+**truffle-config.js**
+Copy: (https://github.com/Luiserebii/Maximum-Solidity-Environment/blob/master/truffle-config.js)[https://github.com/Luiserebii/Maximum-Solidity-Environment/blob/master/truffle-config.js]
 
 
 ## Step-by-step:
@@ -223,7 +280,7 @@ tsc --init
 * We'll be using Google's style guide plugin: 
   * `npm i --save-dev eslint-config-google`
 * We will also need the TypeScript ESLint parser and plugin: 
-  * `npm install @typescript-eslint/parser @typescript-eslint/eslint-plugin --save-dev`
+  * `npm i --save-dev @typescript-eslint/parser @typescript-eslint/eslint-plugin`
 * Finally, setup `.eslintrc.js`. The following is a pretty good configuration that can be used:
 
 **.eslintrc.js**
