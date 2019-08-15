@@ -35,6 +35,7 @@ Table of Contents
             * [Codecov](#codecov)
             * [LGTM](#lgtm)
          * [Finishing touches](#finishing-touches)
+      * [Usage](#usage)
       * [Versioning](#versioning)
 
 
