@@ -106,6 +106,46 @@ Copy: (https://github.com/Luiserebii/Maximum-Solidity-Environment/blob/master/.s
   
 **truffle-config.js**  
 Copy: (https://github.com/Luiserebii/Maximum-Solidity-Environment/blob/master/truffle-config.js)[https://github.com/Luiserebii/Maximum-Solidity-Environment/blob/master/truffle-config.js]
+  
+At this point, all that is necessary is to signup on CircleCI, Codecov, and LGTM, and set them up with the repo.
+
+## From clone:
+
+Another option for using this is cloning the repo and replacing the repo-specific values with your own. 
+
+To accomplish this, clone the repo:
+```
+git clone https://github.com/Luiserebii/Maximum-Solidity-Environment
+```
+
+Install all dependencies:
+```
+npm i
+```
+
+And finally, within package.json, replace the following values with your own:
+
+**package.json**
+```javascript
+{
+  "name": "maximum-solidiy-environment",
+  "version": "1.0.0",
+  "description": "The ultimate environment for Solidity development. The final choice. The end.",
+  // ...
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Luiserebii/Maximum-Solidity-Environment.git"
+  },
+  "author": "Luiserebii",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Luiserebii/Maximum-Solidity-Environment/issues"
+  },
+  "homepage": "https://github.com/Luiserebii/Maximum-Solidity-Environment#readme",
+  // ...   
+```
+
+Like in the Quick Setup, at this point, all that is necessary is to signup on CircleCI, Codecov, and LGTM, and set them up with the repo.
 
 
 ## Step-by-step:
@@ -491,13 +531,13 @@ workflows:
   * The new additions are the `Install Codecov` and `Run Codecov` scripts respectively.
 * Push these new changes to your repo, and you should have Codecov update with your report!
 
-##### LGTM
+#### LGTM
 
 * LGTM is even easier to setup; just head to [https://lgtm.com](https://lgtm.com/) and setup a new account
 * Add your project by copy-pasting the GitHub repository URL over
 * Wait for it to build and analyze; this can take some time. You should get a notification via email when it's finished!
 
-#### Finishing touches
+### Finishing touches
 
 * Add some badges:
   * For CircleCI, this can be found under Settings -> Integrations -> Status Badges.
