@@ -59,7 +59,7 @@ npm init
 After running through the prompts, install all of the following packages:
 
 ```
-npm i --savedev truffle ganache-cli typescript chai @types/chai @types/mocha @types/node @machinomy/types-truffle @machinomy/types-truffle-contract @machinomy/types-truffle-resolver truffle-contract truffle-resolver solhint eslint eslint-config-google @typescript-eslint/parser @typescript-eslint/eslint-plugin solidity-coverage 
+npm i --save-dev truffle ganache-cli typescript chai @types/chai @types/mocha @types/node @machinomy/types-truffle @machinomy/types-truffle-contract @machinomy/types-truffle-resolver truffle-contract truffle-resolver solhint eslint eslint-config-google @typescript-eslint/parser @typescript-eslint/eslint-plugin solidity-coverage 
 ```
 
 Initialize Truffle:
@@ -86,25 +86,25 @@ Finally, add the following to your files:
   // ..
 ```
 
-**.circleci/config.yml**
+**.circleci/config.yml**  
 Copy: (https://github.com/Luiserebii/Maximum-Solidity-Environment/blob/master/.circleci/config.yml)[https://github.com/Luiserebii/Maximum-Solidity-Environment/blob/master/.circleci/config.yml]
   
-**.eslintrc.js**
+**.eslintrc.js**  
 Copy: (https://github.com/Luiserebii/Maximum-Solidity-Environment/blob/master/.eslintrc.js)[https://github.com/Luiserebii/Maximum-Solidity-Environment/blob/master/.eslintrc.js]
   
-**.gitattributes**
+**.gitattributes**  
 Copy: (https://github.com/Luiserebii/Maximum-Solidity-Environment/blob/master/.gitattributes)[https://github.com/Luiserebii/Maximum-Solidity-Environment/blob/master/.gitattributes]
   
-**.gitignore**
+**.gitignore**  
 Copy: (https://github.com/Luiserebii/Maximum-Solidity-Environment/blob/master/.gitignore)[https://github.com/Luiserebii/Maximum-Solidity-Environment/blob/master/.gitignore]
   
-**.solcover.js**
+**.solcover.js**  
 Copy: (https://github.com/Luiserebii/Maximum-Solidity-Environment/blob/master/.solcover.js)[https://github.com/Luiserebii/Maximum-Solidity-Environment/blob/master/.solcover.js]
   
-**.solhint.json**
+**.solhint.json**  
 Copy: (https://github.com/Luiserebii/Maximum-Solidity-Environment/blob/master/.solhint.json)[https://github.com/Luiserebii/Maximum-Solidity-Environment/blob/master/.solhint.json]
   
-**truffle-config.js**
+**truffle-config.js**  
 Copy: (https://github.com/Luiserebii/Maximum-Solidity-Environment/blob/master/truffle-config.js)[https://github.com/Luiserebii/Maximum-Solidity-Environment/blob/master/truffle-config.js]
 
 
