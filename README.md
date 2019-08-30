@@ -595,3 +595,7 @@ This should be more or less evident by `package.json`, but a brief overview migh
 ## Versioning
 
 If it helps, this was all run on Node v10.15.3 and npm 6.4.1. Further versioning information can be found in the `package-lock.json`.
+
+## Credits
+
+I'd like to give credits to the [OpenZeppelin Contracts](https://github.com/OpenZeppelin/openzeppelin-contracts) repo, much of the setup of these files are largely inspired by them. Many of the modifications made were to accommodate TypeScript integration.
