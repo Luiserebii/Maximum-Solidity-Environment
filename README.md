@@ -97,11 +97,11 @@ Finally, add the following to your files:
     "compile": "npx truffle compile",
     "chain": "ganache-cli",
     "coverage": "npx solidity-coverage",
-    "lint": "npm run lint:sol && npm run lint:js",
-    "lint:fix": "npm run lint:js:fix",
+    "lint": "npm run lint:sol && npm run lint:ts",
+    "lint:fix": "npm run lint:ts:fix",
     "lint:sol": "solhint --max-warnings 0 \"contracts/**/*.sol\"",
-    "lint:js": "eslint ./test/src/**/*.ts",
-    "lint:js:fix": "eslint --fix ./test/src/**/*.ts"
+    "lint:ts": "eslint ./test/src/**/*.ts",
+    "lint:ts:fix": "eslint --fix ./test/src/**/*.ts"
   // ..
 ```
 
@@ -373,17 +373,17 @@ module.exports = {
 };
 
 ```
-* Within package.json, edit the "lint" script and add the new linting scripts below. `lint` will handle both the solhint and ESLint linting. Since no option for fixing linting errors found by solhint exists, `lint:fix` will just reference `lint:js:fix` for the time being:
+* Within package.json, edit the "lint" script and add the new linting scripts below. `lint` will handle both the solhint and ESLint linting. Since no option for fixing linting errors found by solhint exists, `lint:fix` will just reference `lint:ts:fix` for the time being:
 
 **package.json**
 ```javascript
   "scripts": {
     // ...
-    "lint": "npm run lint:sol && npm run lint:js",
-    "lint:fix": "npm run lint:js:fix",
+    "lint": "npm run lint:sol && npm run lint:ts",
+    "lint:fix": "npm run lint:ts:fix",
     "lint:sol": "solhint --max-warnings 0 \"contracts/**/*.sol\"",
-    "lint:js": "eslint ./test/src/**/*.ts",
-    "lint:js:fix": "eslint --fix ./test/src/**/*.ts"
+    "lint:ts": "eslint ./test/src/**/*.ts",
+    "lint:ts:fix": "eslint --fix ./test/src/**/*.ts"
   }
 ```
 
@@ -584,9 +584,9 @@ To test your contracts, you will need to open a test chain in a different termin
 
 In order to make sure your code is linted, all you have to do is run `npm run lint`. If you need to be more specific:
   * Solidity: `npm run lint:sol`
-  * TypeScript: `npm run lint:js`
+  * TypeScript: `npm run lint:ts`
   
-Sometimes, errors/warnings from ESLint can be fixed automatically by the tool. To do so, run `npm run lint:fix`, or `npm run lint:js:fix` if you want to be specific. Both will do the same, as there is no `solhint --fix` at the moment.
+Sometimes, errors/warnings from ESLint can be fixed automatically by the tool. To do so, run `npm run lint:fix`, or `npm run lint:ts:fix` if you want to be specific. Both will do the same, as there is no `solhint --fix` at the moment.
 
 To check for code coverage, simply run `npm run coverage`.
 
